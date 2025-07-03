@@ -11,10 +11,16 @@ bool CryptoModel::encryptFile(const QString &filePath, QString &outPath, std::fu
     QByteArray key = "CRYPTKEY";
     int dataSize = data.size();
     if (progressCb) progressCb(0);
+    int lastProgress = -1;
     for (int i = 0; i < dataSize; ++i) {
         data[i] = data[i] ^ key[i % key.size()];
-        if (dataSize > 100 && i % (dataSize / 100) == 0 && progressCb)
-            progressCb((i * 100) / dataSize);
+        if (dataSize > 100 && i % (dataSize / 100) == 0 && progressCb) {
+            int progress = (i * 100) / dataSize;
+            if (progress != lastProgress && progress < 100) {
+                progressCb(progress);
+                lastProgress = progress;
+            }
+        }
     }
     if (progressCb) progressCb(100);
 
