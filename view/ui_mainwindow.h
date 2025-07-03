@@ -157,7 +157,7 @@ public:
 "          color: #e67e22;\n"
 "          font-weight: bold;\n"
 "        ", nullptr));
-        passwordEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "Mot de passe (d\303\251cryptage)", nullptr));
+        passwordEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "Mot de passe", nullptr));
         passwordEdit->setStyleSheet(QCoreApplication::translate("MainWindow", "\n"
 "          font-size: 16px;\n"
 "          padding: 6px 10px;\n"

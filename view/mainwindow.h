@@ -1,5 +1,6 @@
 #pragma once
 #include <QWidget>
+#include "../model/cryptomodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,11 +16,10 @@ public:
 private slots:
     void on_browseButton_clicked();
     void on_actionButton_clicked();
-    void on_cancelButton_clicked(); // Ajouté
+    void on_cancelButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    void encryptFile(const QString &filePath);
-    void decryptFile(const QString &filePath, const QString &password);
+    CryptoModel model;
     void updateProgress(int value);
 };

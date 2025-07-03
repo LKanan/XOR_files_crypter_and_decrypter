@@ -103,7 +103,7 @@
      <item>
       <widget class="QLineEdit" name="passwordEdit">
        <property name="placeholderText">
-        <string>Mot de passe (décryptage)</string>
+        <string>Mot de passe</string>
        </property>
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
